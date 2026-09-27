@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>sh…</title>
+<meta name="description" content="sh… recommends books for the mood you're in, in French or English, using Google Books and Open Library.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Silkscreen&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <canvas class="logo" id="logo" width="320" height="150" role="img" aria-label="sh…"></canvas>
+    <p class="tagline">Books for the mood<br>you're <em>actually</em> in.</p>
+  </header>
+
+  <section class="controls" aria-label="Choose your mood">
+    <div>
+      <div class="step-head"><span class="label">Step 1</span><h2>How do you feel?</h2></div>
+      <div class="moods" id="moods"></div>
+      <p class="hint">Pick one or two. Two moods mix their shelves.</p>
+    </div>
+
+    <div class="tuner-card">
+      <div class="peel" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><path d="M20 2 C21.5 14 26 18.5 38 20 C26 21.5 21.5 26 20 38 C18.5 26 14 21.5 2 20 C14 18.5 18.5 14 20 2Z" fill="#e800b5"/></svg>
+      </div>
+      <div class="dots6" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="lang" role="radiogroup" aria-label="Book language">
+        <span class="bubble">Which language do you read in?</span>
+        <div class="seg">
+          <button type="button" role="radio" id="lang-fr" data-lang="fr" aria-checked="false">FR</button>
+          <button type="button" role="radio" id="lang-en" data-lang="en" aria-checked="false">EN</button>
+          <button type="button" role="radio" id="lang-both" data-lang="both" aria-checked="true">Both</button>
+        </div>
+      </div>
+      <div id="tuners" style="display:grid;gap:22px"></div>
+      <button class="go" id="go" type="button">Find my books <span aria-hidden="true">›</span></button>
+    </div>
+  </section>
+
+  <section class="results" id="results" aria-live="polite">
+    <article class="quote" id="quote"></article>
+    <div>
+      <div class="shelf-head">
+        <div>
+          <div class="label" id="shelfLabel">Your shelf</div>
+          <h2 id="shelfTitle">Six books, <em>hand picked</em></h2>
+        </div>
+        <button class="again" id="again" type="button">Show me others <span aria-hidden="true">↻</span></button>
+      </div>
+      <div id="notice"></div>
+      <div id="shelf"></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>sh… · a mood-based book finder by <a href="https://github.com/fiinsikabore" target="_blank" rel="noopener">Fiinsi Kabore</a></span>
+    <span>Book data and covers from <a href="https://books.google.com" target="_blank" rel="noopener">Google Books</a> and <a href="https://openlibrary.org" target="_blank" rel="noopener">Open Library</a></span>
+  </footer>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
